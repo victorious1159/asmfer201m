@@ -1,0 +1,28 @@
+/* CSS cho modalBackground */
+.modalBackground {
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* CSS cho modalContainer */
+.modalContainer {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng bóng đổ */
+  padding: 10px;
+  border-radius: 10px;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+}
+
+.card {
+  margin-top: 20px;
+}
