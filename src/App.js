@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Create from "./components/Create";
@@ -9,14 +9,18 @@ import LoginPage from "./authenticComponents/Login";
 
 function App() {
   const router = createBrowserRouter([
-    { path: "/login", element: <LoginPage/>},
-    { path: "/", element: <Create /> },
+    // { path: "/login", element: <LoginPage /> },
+    { path: "/", element: <LoginPage /> },
     { path: "/read", element: <Read /> },
     { path: "/edit/:id", element: <Update /> },
+    { path: "/Create", element: <Create /> },
   ]);
+
+  const isLoginPage = window.location.pathname === "/";  
+
   return (
     <div className="container">
-      <Navbar />
+      {isLoginPage ? null : <Navbar />}
       <RouterProvider router={router} />
     </div>
   );

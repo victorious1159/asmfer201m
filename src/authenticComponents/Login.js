@@ -1,39 +1,58 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import "./LoginStyle.css";
 
-//
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-    return (
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+  const handleLogin = () => {
+    // Check if the username and password match your hard-coded credentials
+    if (username === 'admin' && password === '123') {
+      // You can perform any action you need on successful login, e.g., redirect
+      alert('Nhap dung roi'); // Replace this with your desired action
+      navigate("/read");
+    } else {
+      // Handle incorrect credentials here, e.g., show an error message
+      alert('Sai roi, nhap lai di cha'); // Replace this with your desired error handling
+    }
+  };
+
+  return (
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-md-4">
+          <div className="card mt-5">
+            <div className="card-body">
+              <h2 className="card-title text-center">Login</h2>
+              <div className="form-group">
                 <input
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter email"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                  type="text"
+                  className="form-control"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
-                <small id="emailHelp" class="form-text text-muted"></small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+              </div>
+              <div className="form-group">
                 <input
-                    type="password"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                  type="password"
+                  className="form-control"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
+              </div>
+              <div className="text-center">
+                <button className="btn btn-success" onClick={handleLogin}>Login</button>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" onClick={handleLogin}>
-                Submit
-            </button>
-        </form>
-    );
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-
-export default LoginPage;
+export default Login;

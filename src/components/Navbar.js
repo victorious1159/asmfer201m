@@ -30,7 +30,7 @@ function Navbar() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/Create">
                 ADD NEW TO LIST
               </a>
             </li>
